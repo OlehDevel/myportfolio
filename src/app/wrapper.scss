@@ -1,0 +1,14 @@
+@use ".././style/variable.scss" as *;
+
+.wrapper {
+  padding: 0 20px 0 20px;
+  color: white;
+
+  section {
+    padding-top: 50px;
+  }
+
+  @media (min-width: 768px) {
+    padding: 0 80px 0 80px;
+  }
+}

@@ -1,0 +1,118 @@
+@use "../../style/variable.scss" as *;
+
+#projects {
+  padding-bottom: 60px;
+
+  h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .projects-loader-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 28px;
+    background-color: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .loader-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Fira Code", "Courier New", Courier, monospace;
+    font-weight: 600;
+    font-size: 0.95rem;
+
+    .loader-text {
+      color: #94a3b8;
+
+      &::after {
+        content: "";
+        display: inline-block;
+        width: 12px;
+        text-align: left;
+        animation: blinkingDots 1.5s infinite;
+      }
+    }
+
+    .loader-percentage {
+      color: #38dbf8;
+      text-shadow: 0 0 10px rgba(56, 219, 248, 0.3);
+    }
+  }
+
+  .progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: rgba(51, 65, 85, 0.4);
+    border-radius: 100px;
+    overflow: hidden;
+
+    .progress-bar-fill {
+      height: 100%;
+
+      background: linear-gradient(90deg, #38dbf8, #a855f7);
+      border-radius: 100px;
+
+      animation:
+        fillProgress 2s cubic-bezier(0.4, 0, 0.2, 1) forwards,
+        glowPulse 2s ease-in-out infinite alternate;
+    }
+  }
+
+  .projects-subtitle {
+    text-align: center;
+    color: #64748b;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 4px 0 0 0;
+    padding-bottom: 0;
+  }
+}
+
+@keyframes fillProgress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 85%;
+  }
+}
+
+@keyframes blinkingDots {
+  0% {
+    content: "";
+  }
+  25% {
+    content: ".";
+  }
+  50% {
+    content: "..";
+  }
+  75% {
+    content: "...";
+  }
+  100% {
+    content: "";
+  }
+}
+
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 8px rgba(56, 219, 248, 0.4);
+    filter: brightness(1);
+  }
+  100% {
+    box-shadow: 0 0 16px rgba(56, 219, 248, 0.7);
+    filter: brightness(1.2);
+  }
+}
