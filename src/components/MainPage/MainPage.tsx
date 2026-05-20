@@ -28,9 +28,9 @@ const MainPage = () => {
             </h1>
             <h2>{t.hero.role}</h2>
             <p>{t.hero.description}</p>
-            <div className="hero-cta">
-              <a href="#contact">{t.hero.cta} </a>
-            </div>
+            <a href="#contact" className="hero-cta">
+              {t.hero.cta}
+            </a>
             <div className="social">{contactLink}</div>
           </div>
 
